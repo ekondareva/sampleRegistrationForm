@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Assignment2</title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+		<script type="text/javascript" src="solution-jQuery.js"></script>				
+		<link rel="stylesheet" href="solution.css" type="text/css" />			
+		<!--[if lt IE 9]>
+		<script src="dist/html5shiv.js"></script>
+		<![endif]-->		
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1>HTML Layout and Forms, JS and AJAX. jQuery validation</h1>
+				<nav>
+					<ul>
+						<li><a href="">Home</a></li>
+						<li><a href="" class="current">Register</a></li>						
+						<li><a href="">About</a></li>						
+					</ul>
+				</nav>
+			</header>
+			<section class="user-registration">
+				<article>										
+					<form id="userForm" name="userForm" action="solution.html" onsubmit="" method="post">
+						<fieldset>
+							<legend>User Register Information:</legend>
+							<div>
+								<label id="fnamelabel" for="fname" class="title">*First Name:</label>
+								<input type="text" id="fname" name="fname" placeholder="First name" class="input-field"/>
+							</div>
+							<div>
+								<label id="lnamelabel" for="lname" class="title">*Last Name:</label>
+								<input type="text" id="lname" name="lname" placeholder="Last name" class="input-field"/>
+							</div>
+							<div>
+								<label id="mnamelabel" for="mname" class="title">Middle Name:</label>
+								<input type="text" id="mname" name="mname" placeholder="Middle name" class="input-field"/>
+							</div>
+							<div class="radio-buttons">
+								<span id="genderlabel" class="title">*Gender:</span>
+								<input type="radio" name="gender" id="male" value="M"/>
+								<label for="male">Male</label>
+								<input type="radio" name="gender" id="female" value="F" />
+								<label for="female">Female</label><br />
+							</div>
+							<div>
+								<label id="bdaylabel" for="bday" class="title">*Birthday:</label>
+								<input type="text" id="bday" name="bday" placeholder="Birthday" class="input-field"/>
+							</div>								
+							<div>
+								<label id="emaillabel" for="email" class="title">*Email:</label>
+								<input type="text" id="email" name="email" placeholder="Email" class="input-field"/>
+							</div>
+							<div>
+								<label for="occupation" class="title">Occupation:</label>
+								<input type="text" id="occupation" name="occupation" placeholder="Occupation" class="input-field"
+									onkeyup="getjs (this.value);"/><br />
+								<span id="spellcheckresult"></span>
+							</div>
+							<div class="submit">
+								<input type="submit" value="Submit" id="submit" />
+							</div>																								
+						</fieldset>
+					</form>					
+					<p>*Required fields</p>
+					<span id="validation-error"></span>
+				</article>    				    
+			</section>
+			<aside>
+				<section>
+					<h2>User Information</h2>
+					<p>This is an HTML form for user registration. User must specify his/her full name, gender,
+						birthday, email, and occupation (job position). All fields except Middle Name and Occupation
+						are obligatory, gender must be specified. Correctness of all fields
+						filling is checked with JavaScript.
+						The spellcheck of the Occupation, if filled,
+						is performed with AJAX request to Wikipedia service.</p>					
+				</section>				
+			</aside>
+			<footer>
+				&copy;Feb 2013 Ekaterina Kondareva
+			</footer>
+		</div><!-- .wrapper -->
+	</body>
+</html>
